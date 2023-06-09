@@ -1,12 +1,10 @@
+# Simple question answering, but it uses prompts and langchains instead of calling the OpenAI completions API directly.
+
 import sys
 import os
-from langchain.chains.router import MultiPromptChain
 from langchain.llms import OpenAI
-from langchain.chains import ConversationChain
 from langchain.chains.llm import LLMChain
 from langchain.prompts import PromptTemplate
-from langchain.chains.router.llm_router import LLMRouterChain, RouterOutputParser
-from langchain.chains.router.multi_prompt_prompt import MULTI_PROMPT_ROUTER_TEMPLATE
 
 if len(sys.argv) < 2:
     print("Please provide the question as a command line argument.")

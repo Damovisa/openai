@@ -1,6 +1,11 @@
-# Examples use:
+# Sequential langchain example that:
+#  1. interprets the question, converting it into a math problem
+#  2. uses the LLMMathChain to solve the math problem
+# Note, this is far more accurate than just asking GPT direcly
+#
+# Examples:
 #  python .\langchain\sequential-math-example.py "If I had five dollars for every goal scored in the 2018 soccer world cup final, how much money would I have?"
-# python .\langchain\sequential-math-example.py "If the letter A is worth 3 points, and the letter B is worth 9 points, but every other letter is worth 2 points how many points is the word abracadabra?"
+#  python .\langchain\sequential-math-example.py "If the letter A is worth 3 points, and the letter B is worth 9 points, but every other letter is worth 2 points how many points is the word abracadabra?"
 
 import os
 import sys

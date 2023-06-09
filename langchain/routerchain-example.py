@@ -1,3 +1,7 @@
+# Uses a router to determine what type of question it is (generic or math)
+# Then uses the appropriate prompt template to answer the question
+# Note that the only real difference is the prompt template - they're both using the same LLM
+
 import sys
 import os
 from langchain.chains.router import MultiPromptChain
