@@ -3,17 +3,15 @@
 #  The script will continue to ask for questions until you press enter without typing anything.
 
 import openai
-import sys
-
 openai.api_key_path = '.env'
-
-messages=[
-        {"role": "system", "content": "You are a helpful assistant who responds with short answers to questions."}
-    ]
 
 print("\033[92m", end="")
 print("Hi! I'm your friendly, helpful (gpt-3.5-turbo) AI assistant. Ask a question or press enter to quit.")
 print("\033[0m", end="")
+
+messages=[
+        {"role": "system", "content": "You are a helpful assistant who responds with short answers to questions."}
+    ]
 
 while True:
     question = input("> ")
@@ -27,10 +25,10 @@ while True:
         messages=messages
     )
 
-    # change the text color to green
+    # change the text color to green then back to normal
     print("\033[92m", end="")
     print(completion.choices[0].message.content)
-    # change the text color back to the default
     print("\033[0m", end="")
+
     # add completion message to messages list
     messages.append(completion.choices[0].message)
